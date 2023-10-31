@@ -1,20 +1,20 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, Image, StatusBar, TextInput, Button, View } from "react-native";
 
-const App = () => {
+const Login = () => {
     return(
-      <SafeAreaView style={splashStyles.container}>
+      <SafeAreaView style={loginStyles.container}>
         <StatusBar
         animated={true}
         backgroundColor="#1e3273"
       />
         <Image
-          style={splashStyles.appLogo}
+          style={loginStyles.appLogo}
           source={require('./src/assets/images/tastytracks-logo.png')}
         />
-        <Text style={splashStyles.appTitle}>Login to Tasty Tracks</Text>
-        <TextInput style={splashStyles.textInput} placeholder="Username" />
-        <TextInput style={splashStyles.textInput} placeholder="Password" secureTextEntry={true} />
+        <Text style={loginStyles.appTitle}>Login to Tasty Tracks</Text>
+        <TextInput style={loginStyles.textInput} placeholder="Username" />
+        <TextInput style={loginStyles.textInput} placeholder="Password" secureTextEntry={true} />
         
         <View style={{padding:10}}>
           <Button
@@ -26,9 +26,9 @@ const App = () => {
     );
 }
 
-export default App;
+export default Login;
 
-const splashStyles = StyleSheet.create({
+const loginStyles = StyleSheet.create({
   container:{
     flex: 1,
     backgroundColor:"#ddd",

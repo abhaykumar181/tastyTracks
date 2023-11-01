@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { 
   SafeAreaView,
   StyleSheet,
@@ -8,36 +8,39 @@ import {
   TextInput,
   Button,
   View,
-  Pressable
-} from "react-native";
+  Pressable, 
+  Platform } from "react-native";
+import SplashScreen from "react-native-splash-screen";
+
 
 
 const App = () => {
+  useEffect(() => {
+    if(Platform.OS == "android"){
+      SplashScreen.hide();
+    }
+  }, []);
+  
     return(
-      <SafeAreaView style={registerStyles.container}>
+      <SafeAreaView style={loginStyles.container}>
         <StatusBar
         animated={true}
         backgroundColor="green"
       />
         <Image
-          style={registerStyles.appLogo}
+          style={loginStyles.appLogo}
           source={require('./assets/images/tastytracks-logo.png')}
         />
-        <Text style={registerStyles.appTitle}>Tasty Tracks</Text>
-        <Text style={registerStyles.createAccountTitle}>Create an Account</Text>
-        <TextInput style={registerStyles.textInput} placeholder="Your Name"  placeholderTextColor="#fff" />
-        <TextInput style={registerStyles.textInput} placeholder="Email"  placeholderTextColor="#fff" />
-        <View style={{flexDirection: 'row', justifyContent: 'space-evenly' }}>
-          <TextInput style={registerStyles.flexInputs} placeholder="Phone (+91)" placeholderTextColor="#fff" keyboardType="numeric" />
-          <TextInput style={registerStyles.flexInputs} placeholder="Password" placeholderTextColor="#fff" secureTextEntry={true} />
-        </View>
+        <Text style={loginStyles.appTitle}>Login to Tasty Tracks</Text>
+        <TextInput style={loginStyles.textInput} placeholder="Username"  placeholderTextColor="#fff" />
+        <TextInput style={loginStyles.textInput} placeholder="Password" placeholderTextColor="#fff" secureTextEntry={true} />
         
-        <View style={registerStyles.buttonView}>
-          <Button title="Register" color="green" />
+        <View style={loginStyles.buttonView}>
+          <Button title="Login" color="green" />
         </View>
-        <Text style={registerStyles.registerHeadline}>Already have an account?</Text>
-        <Pressable style={registerStyles.registerButton}>
-          <Text style={registerStyles.registerButtonText}>Login Here</Text>
+        <Text style={loginStyles.registerHeadline}>Don't have an account?</Text>
+        <Pressable style={loginStyles.registerButton}>
+          <Text style={loginStyles.registerButtonText}>Register Here</Text>
         </Pressable>
       </SafeAreaView>
     );
@@ -45,10 +48,10 @@ const App = () => {
 
 export default App;
 
-const registerStyles = StyleSheet.create({
+const loginStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#1e3273",
+    backgroundColor:"#5bb45a",
     justifyContent:"center",
     paddingHorizontal:10,
   },
@@ -65,23 +68,7 @@ const registerStyles = StyleSheet.create({
     alignSelf:"center",
     paddingBottom:13
   },
-  createAccountTitle:{
-    fontSize:18,
-    fontFamily: "Urbanist-Bold",
-    alignSelf:"center",
-    color:"#fff"
-  },
   textInput:{
-    height: 40,
-    margin: 11,
-    borderWidth: 2,
-    padding: 10,
-    borderColor:"#fff",
-    color:"#fff",
-    borderRadius:5
-  },
-  flexInputs:{
-    flex:1,
     height: 40,
     margin: 11,
     borderWidth: 2,
@@ -102,10 +89,7 @@ const registerStyles = StyleSheet.create({
     alignSelf:"center",
   },
   registerButtonText:{
-    color:"green",
-    textDecorationLine:"underline",
+    color:"#fff",
     fontFamily: "Urbanist-Bold",
   }
 });
-
-

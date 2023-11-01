@@ -1,7 +1,7 @@
 import React from "react";
 import { SafeAreaView, StyleSheet, Text, Image, View, StatusBar } from "react-native";
 
-const App = () => {
+const Splash = () => {
     return(
       <SafeAreaView style={splashStyles.container}>
         <StatusBar
@@ -23,12 +23,12 @@ const App = () => {
     );
 }
 
-export default App;
+export default Splash;
 
 const splashStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#1e3273",
+    backgroundColor:"#5bb45a",
     justifyContent:"center",
     paddingHorizontal:10,
   },

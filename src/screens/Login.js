@@ -8,10 +8,9 @@ import {
   TextInput,
   Button,
   View,
-  Pressable, 
-  Alert} from "react-native";
+  Pressable } from "react-native";
 
-const App = () => {
+const Login = () => {
     return(
       <SafeAreaView style={loginStyles.container}>
         <StatusBar
@@ -37,12 +36,12 @@ const App = () => {
     );
 }
 
-export default App;
+export default Login;
 
 const loginStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#1e3273",
+    backgroundColor:"#5bb45a",
     justifyContent:"center",
     paddingHorizontal:10,
   },

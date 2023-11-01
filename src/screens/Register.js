@@ -12,7 +12,7 @@ import {
 } from "react-native";
 
 
-const App = () => {
+const Register = () => {
     return(
       <SafeAreaView style={registerStyles.container}>
         <StatusBar
@@ -43,12 +43,12 @@ const App = () => {
     );
 }
 
-export default App;
+export default Register;
 
 const registerStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#1e3273",
+    backgroundColor:"#5bb45a",
     justifyContent:"center",
     paddingHorizontal:10,
   },

@@ -1,7 +1,17 @@
 import React from "react";
-import { SafeAreaView, StyleSheet, Text, Image, StatusBar, TextInput, Button, View } from "react-native";
+import { 
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  Image,
+  StatusBar,
+  TextInput,
+  Button,
+  View,
+  Pressable, 
+  Alert} from "react-native";
 
-const Login = () => {
+const App = () => {
     return(
       <SafeAreaView style={loginStyles.container}>
         <StatusBar
@@ -13,25 +23,26 @@ const Login = () => {
           source={require('./src/assets/images/tastytracks-logo.png')}
         />
         <Text style={loginStyles.appTitle}>Login to Tasty Tracks</Text>
-        <TextInput style={loginStyles.textInput} placeholder="Username" />
-        <TextInput style={loginStyles.textInput} placeholder="Password" secureTextEntry={true} />
+        <TextInput style={loginStyles.textInput} placeholder="Username"  placeholderTextColor="#fff" />
+        <TextInput style={loginStyles.textInput} placeholder="Password" placeholderTextColor="#fff" secureTextEntry={true} />
         
-        <View style={{padding:10}}>
-          <Button
-            title="Login"
-            color="#1e3273"
-          />
+        <View style={loginStyles.buttonView}>
+          <Button title="Login" color="green" />
         </View>
+        <Text style={loginStyles.registerHeadline}>Don't have an account?</Text>
+        <Pressable style={loginStyles.registerButton}>
+          <Text style={loginStyles.registerButtonText}>Register Here</Text>
+        </Pressable>
       </SafeAreaView>
     );
 }
 
-export default Login;
+export default App;
 
 const loginStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#ddd",
+    backgroundColor:"#1e3273",
     justifyContent:"center",
     paddingHorizontal:10,
   },
@@ -43,16 +54,33 @@ const loginStyles = StyleSheet.create({
   },
   appTitle:{
     fontSize:25,
-    color:"#1e3273",
+    color:"#fff",
     fontFamily: "Urbanist-Bold",
     alignSelf:"center",
+    paddingBottom:13
   },
   textInput:{
     height: 40,
-    margin: 13,
+    margin: 11,
     borderWidth: 2,
     padding: 10,
-    borderColor:"#1e3273",
+    borderColor:"#fff",
+    color:"#fff",
     borderRadius:5
   },
+  buttonView:{
+    margin:13,
+    color:"#fff",
+  },
+  registerHeadline:{
+    color:"#fff",
+    alignSelf:"center",
+  },
+  registerButton:{
+    alignSelf:"center",
+  },
+  registerButtonText:{
+    color:"#fff",
+    fontFamily: "Urbanist-Bold",
+  }
 });

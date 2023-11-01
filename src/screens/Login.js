@@ -16,11 +16,11 @@ const App = () => {
       <SafeAreaView style={loginStyles.container}>
         <StatusBar
         animated={true}
-        backgroundColor="#1e3273"
+        backgroundColor="green"
       />
         <Image
           style={loginStyles.appLogo}
-          source={require('./src/assets/images/tastytracks-logo.png')}
+          source={require('./assets/images/tastytracks-logo.png')}
         />
         <Text style={loginStyles.appTitle}>Login to Tasty Tracks</Text>
         <TextInput style={loginStyles.textInput} placeholder="Username"  placeholderTextColor="#fff" />

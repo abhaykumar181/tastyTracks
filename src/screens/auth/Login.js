@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { 
   SafeAreaView,
   StyleSheet,
@@ -8,7 +8,8 @@ import {
   TextInput,
   Button,
   View,
-  Pressable } from "react-native";
+  Pressable, 
+  } from "react-native";
 
 const Login = () => {
     return(
@@ -19,7 +20,7 @@ const Login = () => {
       />
         <Image
           style={loginStyles.appLogo}
-          source={require('./assets/images/tastytracks-logo.png')}
+          source={require('../../../assets/images/tastytracks-logo.png')}
         />
         <Text style={loginStyles.appTitle}>Login to Tasty Tracks</Text>
         <TextInput style={loginStyles.textInput} placeholder="Username"  placeholderTextColor="#fff" />

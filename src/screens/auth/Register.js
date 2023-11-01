@@ -21,7 +21,7 @@ const Register = () => {
       />
         <Image
           style={registerStyles.appLogo}
-          source={require('./assets/images/tastytracks-logo.png')}
+          source={require('../../../assets/images/tastytracks-logo.png')}
         />
         <Text style={registerStyles.appTitle}>Tasty Tracks</Text>
         <Text style={registerStyles.createAccountTitle}>Create an Account</Text>

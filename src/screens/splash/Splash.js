@@ -11,7 +11,7 @@ const Splash = () => {
         <View style={splashStyles.logoContainer}>
           <Image
             style={splashStyles.appLogo}
-            source={require('./src/assets/images/tastytracks-logo.png')}
+            source={require('../../../assets/images/tastytracks-logo.png')}
           />
           <Text style={splashStyles.appTitle}>Tasty Tracks</Text>
           <Text style={splashStyles.tagLine}>Blue Apron Unforgettable meals. Delivered.</Text>

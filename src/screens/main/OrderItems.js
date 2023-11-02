@@ -31,7 +31,7 @@ export default OrderItems;
 const registerStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"lightgreen",
+    backgroundColor:"#fff",
     justifyContent:"center",
     paddingHorizontal:10,
   },
@@ -43,7 +43,6 @@ const registerStyles = StyleSheet.create({
   },
   appTitle:{
     fontSize:25,
-    color:"#fff",
     fontFamily: "Urbanist-Bold",
     alignSelf:"center",
     paddingBottom:13

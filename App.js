@@ -78,7 +78,7 @@ const App = () => {
     }
 
     return(
-      (auth === true) ? <AuthNavigator />: <OrderItemsNavigator />
+      (auth === false) ? <AuthNavigator />: <OrderItemsNavigator />
     );
 }
 

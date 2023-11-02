@@ -12,38 +12,21 @@ import {
 } from "react-native";
 
 
-const Register = ({navigation}) => {
+const Profile = () => {
     return(
       <SafeAreaView style={registerStyles.container}>
         <StatusBar
         animated={true}
         backgroundColor="green"
       />
-        <Image
-          style={registerStyles.appLogo}
-          source={require('../../../assets/images/tastytracks-logo.png')}
-        />
-        <Text style={registerStyles.appTitle}>Tasty Tracks</Text>
-        <Text style={registerStyles.createAccountTitle}>Create an Account</Text>
-        <TextInput style={registerStyles.textInput} placeholder="Your Name"  placeholderTextColor="#fff" />
-        <TextInput style={registerStyles.textInput} placeholder="Email"  placeholderTextColor="#fff" />
-        <View style={{flexDirection: 'row', justifyContent: 'space-evenly' }}>
-          <TextInput style={registerStyles.flexInputs} placeholder="Phone (+91)" placeholderTextColor="#fff" keyboardType="numeric" />
-          <TextInput style={registerStyles.flexInputs} placeholder="Password" placeholderTextColor="#fff" secureTextEntry={true} />
-        </View>
+       
+        <Text style={registerStyles.appTitle}>Profile Screen</Text>
         
-        <View style={registerStyles.buttonView}>
-          <Button title="Register" color="green" />
-        </View>
-        <Text style={registerStyles.registerHeadline}>Already have an account?</Text>
-        <Pressable style={registerStyles.registerButton}>
-          <Text style={registerStyles.registerButtonText} onPress={() => navigation.navigate('Login')} >Login Here</Text>
-        </Pressable>
       </SafeAreaView>
     );
 }
 
-export default Register;
+export default Profile;
 
 const registerStyles = StyleSheet.create({
   container:{

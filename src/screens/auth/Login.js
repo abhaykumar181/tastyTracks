@@ -11,7 +11,7 @@ import {
   Pressable, 
   } from "react-native";
 
-const Login = () => {
+const Login = ({navigation}) => {
     return(
       <SafeAreaView style={loginStyles.container}>
         <StatusBar
@@ -31,7 +31,7 @@ const Login = () => {
         </View>
         <Text style={loginStyles.registerHeadline}>Don't have an account?</Text>
         <Pressable style={loginStyles.registerButton}>
-          <Text style={loginStyles.registerButtonText}>Register Here</Text>
+          <Text style={loginStyles.registerButtonText} onPress={() => navigation.navigate('Register')} >Register Here</Text>
         </Pressable>
       </SafeAreaView>
     );

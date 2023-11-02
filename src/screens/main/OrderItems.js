@@ -31,7 +31,7 @@ export default OrderItems;
 const registerStyles = StyleSheet.create({
   container:{
     flex: 1,
-    backgroundColor:"#5bb45a",
+    backgroundColor:"lightgreen",
     justifyContent:"center",
     paddingHorizontal:10,
   },

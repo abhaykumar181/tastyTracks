@@ -8,6 +8,8 @@ import Login from "./src/screens/auth/Login";
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import OrderItems from "./src/screens/main/OrderItems";
 import Profile from "./src/screens/main/Profile";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -36,9 +38,40 @@ const App = () => {
     const OrderItemsNavigator = () => {
       return (
         <NavigationContainer>
-          <Tab.Navigator>
-            <Tab.Screen name="Settings" component={OrderItems} />
-            <Tab.Screen name="Profile" component={Profile} />
+           <Tab.Navigator 
+           screenOptions={{
+            tabBarActiveTintColor: 'green',
+            tabBarInactiveTintColor:"grey",
+            tabBarHideOnKeyboard: true,
+            tabBarLabelPosition: "beside-icon",
+            tabBarStyle: {
+              borderTopWidth: 0,
+              borderRadius:10,
+            },
+          }}
+        >
+            <Tab.Screen
+              name="Orders Items"
+              component={OrderItems}
+              options={{
+                headerShown: false,
+                tabBarLabel: '',
+                tabBarIcon: ({ color, size }) => (
+                  <MaterialIcons name="fastfood" color={color} size={size}  />
+                ),
+              }}
+            />
+            <Tab.Screen
+              name="Profile"
+              component={Profile}
+              options={{
+                headerShown: false,
+                tabBarLabel: '',
+                tabBarIcon: ({ color, size }) => (
+                  <MaterialIcons name="person" color={color} size={size} />
+                ),
+              }}
+            />
           </Tab.Navigator>
         </NavigationContainer>
       );

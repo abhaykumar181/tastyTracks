@@ -5,22 +5,50 @@ import {
   Text,
   Image,
   StatusBar,
-  TextInput,
-  Button,
+  FlatList,
   View,
   Pressable
 } from "react-native";
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 
 const Profile = () => {
     return(
-      <SafeAreaView style={registerStyles.container}>
+      <SafeAreaView style={profileStyles.container}>
         <StatusBar
         animated={true}
         backgroundColor="green"
       />
        
-        <Text style={registerStyles.appTitle}>Profile Screen</Text>
+       <View style={profileStyles.header}>
+            <Image style={profileStyles.userImage} source={require('../../../assets/images/user.png')} />
+            <View style={profileStyles.userNameStatus}>
+                <Text style={profileStyles.userName}>Joe Jackson</Text>
+                <Text style={profileStyles.userStatus}>If you want something, you've..</Text>
+            </View>
+            <View style={profileStyles.editProfile}>
+                <Pressable>
+                    <Text style={profileStyles.editProfileText}><MaterialIcons name="edit" style={{fontSize:30}} /></Text>
+                </Pressable>
+            </View>
+       </View>
+
+       <View style={profileStyles.list}>
+        <FlatList
+            data={[
+                {key: 'View Profile', icon:"person"},
+                {key: 'Your Orders', icon:"bookmark"},
+                {key: 'Change Password', icon:"lock"},
+            ]}
+            renderItem={({item}) => 
+                <Pressable>
+                    <View style={profileStyles.listItems}>
+                        <MaterialIcons name={item.icon} style={{fontSize:30, paddingRight:5}} />
+                        <Text style={profileStyles.listItemText}>{item.key}</Text>
+                    </View>
+                </Pressable>
+            } />
+       </View>
         
       </SafeAreaView>
     );
@@ -28,67 +56,61 @@ const Profile = () => {
 
 export default Profile;
 
-const registerStyles = StyleSheet.create({
-  container:{
-    flex: 1,
-    backgroundColor:"#5bb45a",
-    justifyContent:"center",
-    paddingHorizontal:10,
-  },
-  appLogo:{
-    resizeMode: 'contain',
-    height: 100,
-    width: 100,
-    alignSelf:"center",
-  },
-  appTitle:{
-    fontSize:25,
-    color:"#fff",
-    fontFamily: "Urbanist-Bold",
-    alignSelf:"center",
-    paddingBottom:13
-  },
-  createAccountTitle:{
-    fontSize:18,
-    fontFamily: "Urbanist-Bold",
-    alignSelf:"center",
-    color:"#fff"
-  },
-  textInput:{
-    height: 40,
-    margin: 11,
-    borderWidth: 2,
-    padding: 10,
-    borderColor:"#fff",
-    color:"#fff",
-    borderRadius:5
-  },
-  flexInputs:{
-    flex:1,
-    height: 40,
-    margin: 11,
-    borderWidth: 2,
-    padding: 10,
-    borderColor:"#fff",
-    color:"#fff",
-    borderRadius:5
-  },
-  buttonView:{
-    margin:13,
-    color:"#fff",
-  },
-  registerHeadline:{
-    color:"#fff",
-    alignSelf:"center",
-  },
-  registerButton:{
-    alignSelf:"center",
-  },
-  registerButtonText:{
-    color:"green",
-    textDecorationLine:"underline",
-    fontFamily: "Urbanist-Bold",
-  }
+const profileStyles = StyleSheet.create({
+    container:{
+        flex: 1,
+        backgroundColor:"#fff",
+        padding:10,
+    },
+    header:{
+        display:"flex",
+        flexDirection:"row",
+    },
+    userNameStatus:{
+        flexGrow:1
+    },
+    userImage:{
+        resizeMode: 'contain',
+        height: 50,
+        width: 60,
+        alignSelf:"center",
+    },
+    userName:{
+        fontSize:20,
+        fontFamily: "Urbanist-Bold",
+    },
+    userStatus:{
+        fontSize:16,
+        flexWrap:"wrap",
+        color:"lightseagreen",
+        fontFamily: "Urbanist-Bold",
+    },
+    editProfile:{
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"flex-end",
+        margin:10,
+    },
+    editProfileText:{
+        fontFamily: "Urbanist-Bold",
+        color:"#4992ca"
+    },
+    list:{
+        flex: 1,
+        backgroundColor:"#fff",
+        margin:10,
+    },
+    listItems:{
+        backgroundColor:"whitesmoke",
+        padding:15,
+        marginVertical:10,
+        borderRadius:20,
+        flexDirection:"row",
+    },
+    listItemText:{
+        fontSize:20
+    }
+ 
 });
 
 
